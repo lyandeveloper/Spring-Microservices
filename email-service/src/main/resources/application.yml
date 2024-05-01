@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: email-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ms-email
+    username: postgres
+    password: admin
+
+  jpa:
+    hibernate:
+      ddl-auto: update
