@@ -16,6 +16,21 @@ spring:
     hibernate:
       ddl-auto: update
 
+  mail:
+    host: your-host
+    port: your-post
+    username: your-username
+    password: your-password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    smtp:
+      ssl:
+        protocols: TLSv1.2
+
 topic:
   name:
     producer: topic_spring_ms
