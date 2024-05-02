@@ -10,9 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService {
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    EmailService emailService;
 
     @Transactional
-    public UserModel save(UserModel userModel) {
+    public UserModel saveAndPublish(UserModel userModel) {
+        emailService.publishMessageEmail(userModel);
         return userRepository.save(userModel);
     }
 }

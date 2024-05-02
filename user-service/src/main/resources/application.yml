@@ -4,11 +4,28 @@ server:
 spring:
   application:
     name: user-service
+
   datasource:
     url: jdbc:postgresql://localhost:5432/ms-user
     username: postgres
     password: admin
 
+  kafka:
+    bootstrap-servers: localhost:29092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      group-id: user_service_group
+
   jpa:
     hibernate:
       ddl-auto: update
+
+topic:
+  name:
+    producer: topic_spring_ms
+
+auto:
+  create:
+    topics:
+      enable: true

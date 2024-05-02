@@ -22,6 +22,6 @@ public class UserController {
     public ResponseEntity<UserModel> saveUser(@RequestBody @Valid UserRecordDTO userRecordDTO) {
         var userModel = new UserModel();
         BeanUtils.copyProperties(userRecordDTO, userModel);
-        return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(userModel));
+        return ResponseEntity.status(HttpStatus.CREATED).body(userService.saveAndPublish(userModel));
     }
 }
