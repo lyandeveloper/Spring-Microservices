@@ -1,3 +1,6 @@
+server:
+  port: 8082
+
 spring:
   application:
     name: email-service
@@ -6,6 +9,13 @@ spring:
     username: postgres
     password: admin
 
+  kafka:
+    bootstrap-servers: localhost:29092
+
   jpa:
     hibernate:
       ddl-auto: update
+
+topic:
+  name:
+    producer: topic_spring_ms
