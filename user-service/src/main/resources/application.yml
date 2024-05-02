@@ -13,9 +13,7 @@ spring:
   kafka:
     bootstrap-servers: localhost:29092
     producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      group-id: user_service_group
+      group-id: spring-ms
 
   jpa:
     hibernate:

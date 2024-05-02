@@ -10,13 +10,13 @@ import java.io.Serializable;
 public class KafkaService {
     @Value(value = "${topic.name.producer}")
     private String topicName;
-    private final KafkaTemplate<String, Serializable> kafkaTemplate;
+    private final KafkaTemplate<String, Object> kafkaTemplate;
 
-    public KafkaService(KafkaTemplate<String, Serializable> kafkaTemplate) {
+    public KafkaService(KafkaTemplate<String, Object> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void send(Serializable message) {
+    public void send(Object message) {
         System.out.printf("Payload enviado: %s", message);
         kafkaTemplate.send(topicName, message);
     }

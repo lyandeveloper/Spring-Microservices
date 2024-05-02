@@ -3,7 +3,7 @@ package com.api.userservice.dtos;
 import java.io.Serializable;
 import java.util.UUID;
 
-public class EmailDTO implements Serializable {
+public class EmailDTO {
     private UUID userId;
     private String emailTo;
     private String subject;
